@@ -1,0 +1,3 @@
+[submodule "external/evoprompt"]
+	path = external/evoprompt
+	url = https://github.com/beeevita/EvoPrompt
