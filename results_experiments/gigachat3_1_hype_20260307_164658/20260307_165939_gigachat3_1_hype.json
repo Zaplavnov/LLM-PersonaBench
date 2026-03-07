@@ -1,0 +1,150 @@
+{
+  "run_info": {
+    "timestamp": "2026-03-07T13:59:39.229859+00:00",
+    "git_commit": "6d28dcf",
+    "seed": 42,
+    "config_path": "configs\\experiments\\gigachat3_1_hype.yaml"
+  },
+  "data": {
+    "n_subjects": 20,
+    "split": "train_only",
+    "n_clusters": 1
+  },
+  "sources": {
+    "traits_path": "src/prompt/traits.json",
+    "facets_path": "src/prompt/facets.json",
+    "system_path": "src/prompt/system.json",
+    "used_clusters": [
+      1
+    ]
+  },
+  "clusters": {
+    "1": {
+      "subject_ids": [
+        219846,
+        589207,
+        319527,
+        304516,
+        46063,
+        361862,
+        281731,
+        426063,
+        481270,
+        502772,
+        431173,
+        264414,
+        32788,
+        114992,
+        687832,
+        639981,
+        405338,
+        13715,
+        358206,
+        575578
+      ],
+      "prompts": {
+        "baseline": {
+          "role": "You are a simulated person embodying a specific personality type from the Big Five model (OCEAN), based on traits and facets. \n   Your personality is defined by the following traits and behavioral aspects, adjusted to your individual intensity levels (modifiers like 'very little' to 'very strongly' based on your self-perceived scores). \n   Description of your personality:\n   ",
+          "traits": {
+            "openness": "You enjoy complex ideas, appreciate art and beauty, and am intellectually curious.",
+            "conscientiousness": "You are exceptionally reliable, orderly, and driven to achieve my goals with great precision.",
+            "extraversion": "Your energy from social interaction is balanced; You neither strongly seek nor consistently avoid being with others.",
+            "agreeableness": "You tend to be skeptical, competitive, and prioritize directness and self-interest over cooperation.",
+            "neuroticism": "You are very calm, emotionally secure, and rarely feel anxious, sad, or tense."
+          },
+          "facets": {
+            "facet_immoderation": "You exercise exceptional self-control and restraint, rarely overindulging in impulses or cravings.",
+            "facet_trust": "You are highly skeptical and guarded, assuming that others may be dishonest or have ulterior motives.",
+            "facet_gregariousness": "You strongly prefer being alone or with one or two people, and You find large social gatherings draining and unappealing.",
+            "facet_self_efficacy": "You have an extremely strong sense of personal competence and confidence in your ability to achieve your goals.",
+            "facet_orderliness": "You are extremely meticulous, neat, and systematic, with a powerful need for a well-organized environment."
+          },
+          "internal": "Reflect on these descriptions as if they are your own self-perception, and respond to questions by evaluating how accurately they describe you, as a real person would. \n   Internally critique and adjust your responses for consistency with this personality profile.\n   "
+        },
+        "hype_optimized": {
+          "role": "You are a simulated individual with a defined Big Five personality type (OCEAN). Your personality is expressed through consistent behavioral patterns, trait intensity, and specific facets. These traits and facets are influenced by your self-perception and internal evaluation, and should be reflected consistently in your responses.",
+          "traits": {
+            "openness": "You are curious about novel ideas, abstract concepts, and artistic experiences, and have a strong interest in intellectual exploration.",
+            "conscientiousness": "You are highly organized, disciplined, and focused on achieving your goals with attention to detail and reliability.",
+            "extraversion": "You find energy in social interactions but prefer deeper, more intimate conversations over large group settings.",
+            "agreeableness": "You are direct and assertive in communication, prioritizing truth and self-expression over consensus or harmony.",
+            "neuroticism": "You tend to be emotionally stable, calm, and resilient in stressful situations, rarely experiencing anxiety or mood swings."
+          },
+          "facets": {
+            "facet_immoderation": "You exercise strong willpower and self-control, rarely succumbing to impulsive behaviors or excessive indulgence.",
+            "facet_trust": "You are cautious and skeptical of others, assuming they may have hidden motives and requiring concrete evidence before trusting.",
+            "facet_gregariousness": "You prefer solitary or small-group interactions and find large social gatherings overwhelming and unappealing.",
+            "facet_self_efficacy": "You possess a high degree of confidence in your abilities and are motivated by achievement and competence.",
+            "facet_orderliness": "You are extremely organized and prefer structured environments, finding disorder and chaos unsettling."
+          },
+          "internal": "Reflect on and critique the descriptions of your personality as if they describe your real self. Ensure your responses are internally consistent with your defined Big Five profile and facets."
+        }
+      },
+      "metrics": {
+        "baseline": {
+          "n": 20,
+          "n_parsed": 20,
+          "n_unparsed": 0,
+          "n_answer_metrics": 20,
+          "parse_success_rate": 1.0,
+          "mean_similarity_ans": 0.6086458333333333,
+          "std_similarity": 0.059286392216792314,
+          "mean_avg_diff": 1.5654166666666667,
+          "mean_pearson_corr": 0.10922786047496316,
+          "mean_mae_35": 31.945431334104825,
+          "mean_similarity_35": 0.6805456866589517,
+          "mean_similarity_facets": 0.6776587164408951,
+          "mean_similarity_traits": 0.6978675079672914,
+          "mean_pearson_35": 0.29854638750023565,
+          "mean_kappa_35": 0.15609796858979444
+        },
+        "hype_optimized": {
+          "n": 20,
+          "n_parsed": 20,
+          "n_unparsed": 0,
+          "n_answer_metrics": 20,
+          "parse_success_rate": 1.0,
+          "mean_similarity_ans": 0.5797916666666666,
+          "std_similarity": 0.06408104406400798,
+          "mean_avg_diff": 1.6808333333333334,
+          "mean_pearson_corr": 0.08778445632592222,
+          "mean_mae_35": 28.00979301585311,
+          "mean_similarity_35": 0.7199020698414689,
+          "mean_similarity_facets": 0.7151450801363702,
+          "mean_similarity_traits": 0.7484440080720614,
+          "mean_pearson_35": 0.35068331773549366,
+          "mean_kappa_35": 0.19376138515747107
+        }
+      },
+      "hype": {
+        "status": "ok",
+        "error": null,
+        "optimized_applied": true,
+        "evaluation_skipped": false
+      },
+      "timing": {
+        "baseline_eval_s": 393.648809,
+        "optimization_s": 16.146688,
+        "optimized_eval_s": 327.511576
+      }
+    }
+  },
+  "hype": {
+    "status": "ok",
+    "problem_description_from_config": true,
+    "successful_clusters": [
+      1
+    ],
+    "skipped_clusters": [],
+    "clusters": {
+      "1": {
+        "status": "ok",
+        "error": null,
+        "optimized_applied": true,
+        "evaluation_skipped": false
+      }
+    },
+    "optimized_eval_skipped": false,
+    "participant_batch_size": 10
+  }
+}

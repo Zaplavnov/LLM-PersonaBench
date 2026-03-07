@@ -353,9 +353,9 @@ def _score_single_participant(
     model_answers = parse_response(response.content)
     if not model_answers:
         return {
-            "similarity": 0.0,
-            "avg_diff": 0.0,
-            "pearson_corr": 0.0,
+            "similarity": None,
+            "avg_diff": None,
+            "pearson_corr": None,
             "mae_35": None,
             "mae_per_dim": None,
             "similarity_35": None,
@@ -363,6 +363,7 @@ def _score_single_participant(
             "kappa_35": None,
             "mean_similarity_facets": None,
             "mean_similarity_traits": None,
+            "parsed_ok": False,
             "model_answers": None,
             "simulated_ocean": None,
         }
@@ -402,6 +403,7 @@ def _score_single_participant(
         "kappa_35": None,
         "mean_similarity_facets": None,
         "mean_similarity_traits": None,
+        "parsed_ok": True,
         "model_answers": model_answers,
         "simulated_ocean": None,
     }
@@ -473,6 +475,10 @@ def _evaluate_prompt(
     if not scores:
         return {
             "n": 0,
+            "n_parsed": 0,
+            "n_unparsed": 0,
+            "n_answer_metrics": 0,
+            "parse_success_rate": 0.0,
             "mean_similarity_ans": 0.0,
             "std_similarity": 0.0,
             "mean_avg_diff": 0.0,
@@ -485,14 +491,25 @@ def _evaluate_prompt(
             "mean_kappa_35": 0.0,
         }
 
-    mean_similarity = float(np.mean([s["similarity"] for s in scores]))
-    std_similarity = float(np.std([s["similarity"] for s in scores]))
-    mean_avg_diff = float(np.mean([s["avg_diff"] for s in scores]))
-    mean_pearson_corr = float(np.mean([s["pearson_corr"] for s in scores]))
+    similarity_values = [float(s["similarity"]) for s in scores if s.get("similarity") is not None]
+    avg_diff_values = [float(s["avg_diff"]) for s in scores if s.get("avg_diff") is not None]
+    pearson_values = [float(s["pearson_corr"]) for s in scores if s.get("pearson_corr") is not None]
+    n_total = len(scores)
+    n_answer_metrics = len(similarity_values)
+    n_unparsed = n_total - n_answer_metrics
+
+    mean_similarity = float(np.mean(similarity_values)) if similarity_values else 0.0
+    std_similarity = float(np.std(similarity_values)) if similarity_values else 0.0
+    mean_avg_diff = float(np.mean(avg_diff_values)) if avg_diff_values else 0.0
+    mean_pearson_corr = float(np.mean(pearson_values)) if pearson_values else 0.0
     agg_ff = aggregate_cluster_five_factor_metrics(scores)
 
     return {
-        "n": len(scores),
+        "n": n_total,
+        "n_parsed": n_answer_metrics,
+        "n_unparsed": n_unparsed,
+        "n_answer_metrics": n_answer_metrics,
+        "parse_success_rate": (float(n_answer_metrics) / float(n_total)) if n_total else 0.0,
         "mean_similarity_ans": mean_similarity,
         "std_similarity": std_similarity,
         "mean_avg_diff": mean_avg_diff,

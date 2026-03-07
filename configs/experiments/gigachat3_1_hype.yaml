@@ -1,5 +1,5 @@
-name: "gigachat3_0_hype"
-description: "HYPE-оптимизация шаблона промпта для кластеров 0"
+name: "gigachat3_1_hype"
+description: "HYPE-оптимизация шаблона промпта для кластеров 1"
 
 prompt:
   traits_path: "src/prompt/traits.json"
@@ -8,7 +8,7 @@ prompt:
 
 data:
   file_path: "data/raw/df_ipipneo_120_clusters"
-  clusters: [0]
+  clusters: [1]
   num_participants: 20
 
 model:
