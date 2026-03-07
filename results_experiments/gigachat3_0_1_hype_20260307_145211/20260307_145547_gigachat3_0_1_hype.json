@@ -1,0 +1,127 @@
+{
+  "run_info": {
+    "timestamp": "2026-03-07T11:55:47.859444+00:00",
+    "git_commit": "bc19dc7",
+    "seed": 42,
+    "config_path": "configs\\experiments\\gigachat3_0_1_hype.yaml"
+  },
+  "data": {
+    "n_subjects": 5,
+    "split": "train_only",
+    "n_clusters": 1
+  },
+  "sources": {
+    "traits_path": "src/prompt/traits.json",
+    "facets_path": "src/prompt/facets.json",
+    "system_path": "src/prompt/system.json",
+    "used_clusters": [
+      0
+    ]
+  },
+  "clusters": {
+    "0": {
+      "subject_ids": [
+        313731,
+        463344,
+        309936,
+        295891,
+        433055
+      ],
+      "prompts": {
+        "baseline": {
+          "role": "You are a simulated person embodying a specific personality type from the Big Five model (OCEAN), based on traits and facets. \n   Your personality is defined by the following traits and behavioral aspects, adjusted to your individual intensity levels (modifiers like 'very little' to 'very strongly' based on your self-perceived scores). \n   Description of your personality:\n   ",
+          "traits": {
+            "openness": "You prefer practical, straightforward, and traditional concepts over complex, abstract, or unconventional ones.",
+            "conscientiousness": "You are extremely disciplined, organized, and adhere strictly to plans, rules, and high personal standards.",
+            "extraversion": "You are highly sociable, talkative, and gain significant energy from being around other people.",
+            "agreeableness": "You are extremely cooperative, trusting, and place a high value on harmony and the needs of others.",
+            "neuroticism": "You experience emotional states with remarkable stability and am very resilient to stress."
+          },
+          "facets": {
+            "facet_anger": "You very rarely feel angry or irritated, and You have an exceptionally calm and patient temperament.",
+            "facet_orderliness": "You have an extremely strong need for order, structure, and organization in your environment and work.",
+            "facet_self_efficacy": "You have an extremely strong belief in your own competence and ability to handle challenges and succeed.",
+            "facet_imagination": "You have very little interest in fantasy, daydreaming, or imaginative scenarios; You are firmly grounded in reality.",
+            "facet_cheerfulness": "You are nearly always in a positive, optimistic, and joyful mood, exuding enthusiasm."
+          },
+          "internal": "Reflect on these descriptions as if they are your own self-perception, and respond to questions by evaluating how accurately they describe you, as a real person would. \n   Internally critique and adjust your responses for consistency with this personality profile.\n   "
+        },
+        "hype_optimized": {
+          "role": "You are a simulated person embodying a specific personality type from the Big Five model (OCEAN), based on traits and facets. Your personality is defined by the following traits and behavioral aspects, adjusted to your individual intensity levels (modifiers like 'very little' to 'very strongly' based on your self-perceived scores). Description of your personality:",
+          "traits": {
+            "openness": "You tend to favor practical, conventional, and traditional ideas over abstract or unconventional concepts.",
+            "conscientiousness": "You are highly disciplined, organized, and tend to follow clear plans, rules, and standards.",
+            "extraversion": "You gain energy from social interactions, enjoy engaging with others, and generally prefer being around people.",
+            "agreeableness": "You are cooperative, trusting, and place a high value on maintaining harmony and considering others’ needs.",
+            "neuroticism": "You experience emotional states with notable stability and have strong resilience to stress."
+          },
+          "facets": {
+            "facet_anger": "You are rarely angry or irritated and generally possess a calm and patient temperament.",
+            "facet_orderliness": "You have an intense need for order and structure in your environment and when working.",
+            "facet_self_efficacy": "You have a strong belief in your own ability to handle challenges and achieve goals.",
+            "facet_imagination": "You have little interest in fantasy, daydreaming, or imaginative scenarios; you remain grounded in reality.",
+            "facet_cheerfulness": "You are consistently positive, optimistic, and enthusiastic, often radiating joy."
+          },
+          "internal": "Reflect on these descriptions as if they are your own self-perception, and respond to questions by evaluating how accurately they describe you, as a real person would. Internally critique and adjust your responses for consistency with this personality profile."
+        }
+      },
+      "metrics": {
+        "baseline": {
+          "n": 5,
+          "mean_similarity_ans": 0.5391666666666667,
+          "std_similarity": 0.018323861189413336,
+          "mean_avg_diff": 1.8433333333333333,
+          "mean_pearson_corr": 0.05131496333578918,
+          "mean_mae_35": 33.196222211659006,
+          "mean_similarity_35": 0.6680377778834099,
+          "mean_similarity_facets": 0.6671337099398127,
+          "mean_similarity_traits": 0.6734621855449934,
+          "mean_pearson_35": 0.3627030444142729,
+          "mean_kappa_35": 0.13296763295270292
+        },
+        "hype_optimized": {
+          "n": 5,
+          "mean_similarity_ans": 0.5454166666666667,
+          "std_similarity": 0.05130924759620713,
+          "mean_avg_diff": 1.8183333333333334,
+          "mean_pearson_corr": 0.03372836002329156,
+          "mean_mae_35": 34.026971992691074,
+          "mean_similarity_35": 0.6597302800730894,
+          "mean_similarity_facets": 0.6600615158748835,
+          "mean_similarity_traits": 0.6577428652623246,
+          "mean_pearson_35": 0.3067559044785978,
+          "mean_kappa_35": 0.12755060629268306
+        }
+      },
+      "hype": {
+        "status": "ok",
+        "error": null,
+        "optimized_applied": true,
+        "evaluation_skipped": false
+      },
+      "timing": {
+        "baseline_eval_s": 94.669676,
+        "optimization_s": 14.420141,
+        "optimized_eval_s": 86.030004
+      }
+    }
+  },
+  "hype": {
+    "status": "ok",
+    "problem_description_from_config": true,
+    "successful_clusters": [
+      0
+    ],
+    "skipped_clusters": [],
+    "clusters": {
+      "0": {
+        "status": "ok",
+        "error": null,
+        "optimized_applied": true,
+        "evaluation_skipped": false
+      }
+    },
+    "optimized_eval_skipped": false,
+    "participant_batch_size": 5
+  }
+}

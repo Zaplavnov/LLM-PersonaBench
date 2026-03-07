@@ -74,9 +74,13 @@ def main():
         config = setup_results_dir(config)
         print(f"Директория результатов: {config['results_dir']}")
         
-        # Импортируем и запускаем эксперимент
-        from src.simulator.person_type_opt import run_experiment
-        
+        # Импортируем и запускаем эксперимент по режиму
+        mode = str((config.get('experiment') or {}).get('mode', 'ga')).lower()
+        if mode == "hype":
+            from src.simulator.person_opt_hype import run_experiment
+        else:
+            from src.simulator.person_type_opt import run_experiment
+
         print("Запуск эксперимента")
         run_experiment(config)
         
