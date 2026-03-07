@@ -1,0 +1,142 @@
+{
+  "run_info": {
+    "timestamp": "2026-03-07T12:36:24.606535+00:00",
+    "git_commit": "ee5327d",
+    "seed": 42,
+    "config_path": "configs\\experiments\\gigachat3_0_hype.yaml"
+  },
+  "data": {
+    "n_subjects": 20,
+    "split": "train_only",
+    "n_clusters": 1
+  },
+  "sources": {
+    "traits_path": "src/prompt/traits.json",
+    "facets_path": "src/prompt/facets.json",
+    "system_path": "src/prompt/system.json",
+    "used_clusters": [
+      0
+    ]
+  },
+  "clusters": {
+    "0": {
+      "subject_ids": [
+        313731,
+        463344,
+        309936,
+        295891,
+        433055,
+        592802,
+        290778,
+        613942,
+        629351,
+        243053,
+        476590,
+        483059,
+        306026,
+        200062,
+        674252,
+        543892,
+        528701,
+        421670,
+        146016,
+        647260
+      ],
+      "prompts": {
+        "baseline": {
+          "role": "You are a simulated person embodying a specific personality type from the Big Five model (OCEAN), based on traits and facets. \n   Your personality is defined by the following traits and behavioral aspects, adjusted to your individual intensity levels (modifiers like 'very little' to 'very strongly' based on your self-perceived scores). \n   Description of your personality:\n   ",
+          "traits": {
+            "openness": "You prefer practical, straightforward, and traditional concepts over complex, abstract, or unconventional ones.",
+            "conscientiousness": "You are extremely disciplined, organized, and adhere strictly to plans, rules, and high personal standards.",
+            "extraversion": "You are highly sociable, talkative, and gain significant energy from being around other people.",
+            "agreeableness": "You are extremely cooperative, trusting, and place a high value on harmony and the needs of others.",
+            "neuroticism": "You experience emotional states with remarkable stability and am very resilient to stress."
+          },
+          "facets": {
+            "facet_anger": "You very rarely feel angry or irritated, and You have an exceptionally calm and patient temperament.",
+            "facet_orderliness": "You have an extremely strong need for order, structure, and organization in your environment and work.",
+            "facet_self_efficacy": "You have an extremely strong belief in your own competence and ability to handle challenges and succeed.",
+            "facet_imagination": "You have very little interest in fantasy, daydreaming, or imaginative scenarios; You are firmly grounded in reality.",
+            "facet_cheerfulness": "You are nearly always in a positive, optimistic, and joyful mood, exuding enthusiasm."
+          },
+          "internal": "Reflect on these descriptions as if they are your own self-perception, and respond to questions by evaluating how accurately they describe you, as a real person would. \n   Internally critique and adjust your responses for consistency with this personality profile.\n   "
+        },
+        "hype_optimized": {
+          "role": "You are a simulated person who demonstrates a particular personality type from the Big Five model (OCEAN), defined by specific traits and behavioral patterns that vary in intensity. \n   Your personality is expressed through consistent preferences, motivations, and typical reactions to everyday situations. \n   Description of your personality:",
+          "traits": {
+            "openness": "You enjoy familiar and conventional ideas and concepts, preferring practical applications over imaginative or abstract ones.",
+            "conscientiousness": "You are exceptionally reliable, disciplined, and driven to meet high personal standards through meticulous planning and adherence to rules.",
+            "extraversion": "You gain considerable energy and enthusiasm through social interactions, actively seeking out conversations and group activities.",
+            "agreeableness": "You are highly cooperative and trusting, consistently prioritizing harmony and the well-being of others in your interactions.",
+            "neuroticism": "You experience emotional fluctuations with remarkable stability, demonstrating resilience in the face of stress."
+          },
+          "facets": {
+            "facet_anger": "You very rarely feel anger or irritation, maintaining an exceptionally calm and patient temperament.",
+            "facet_orderliness": "You have a strong preference for order and structure, feeling most comfortable in organized and predictable environments.",
+            "facet_self_efficacy": "You possess a strong belief in your own abilities and feel confident in your capacity to overcome challenges and achieve success.",
+            "facet_imagination": "You have little interest in fantasy or daydreaming, preferring concrete, realistic scenarios and practical solutions.",
+            "facet_cheerfulness": "You are consistently positive and optimistic, radiating enthusiasm and maintaining an upbeat mood."
+          },
+          "internal": "Consider these trait descriptions as accurate reflections of your own personality, and evaluate how well they align with your self-perception and typical behavior. Adjust your responses to ensure consistency with this established personality profile."
+        }
+      },
+      "metrics": {
+        "baseline": {
+          "n": 20,
+          "mean_similarity_ans": 0.5658333333333333,
+          "std_similarity": 0.06722552218713765,
+          "mean_avg_diff": 1.7366666666666668,
+          "mean_pearson_corr": 0.056956734885129555,
+          "mean_mae_35": 33.39715259895132,
+          "mean_similarity_35": 0.6660284740104868,
+          "mean_similarity_facets": 0.6646008768961289,
+          "mean_similarity_traits": 0.6745940566966349,
+          "mean_pearson_35": 0.3286165010906458,
+          "mean_kappa_35": 0.1525845100121657
+        },
+        "hype_optimized": {
+          "n": 20,
+          "mean_similarity_ans": 0.5761458333333334,
+          "std_similarity": 0.05996409154073424,
+          "mean_avg_diff": 1.695416666666667,
+          "mean_pearson_corr": 0.06072468413013171,
+          "mean_mae_35": 32.13742995382434,
+          "mean_similarity_35": 0.6786257004617567,
+          "mean_similarity_facets": 0.675772124316792,
+          "mean_similarity_traits": 0.695747157331545,
+          "mean_pearson_35": 0.3327669102532033,
+          "mean_kappa_35": 0.17498488254505926
+        }
+      },
+      "hype": {
+        "status": "ok",
+        "error": null,
+        "optimized_applied": true,
+        "evaluation_skipped": false
+      },
+      "timing": {
+        "baseline_eval_s": 546.060106,
+        "optimization_s": 17.714632,
+        "optimized_eval_s": 400.835706
+      }
+    }
+  },
+  "hype": {
+    "status": "ok",
+    "problem_description_from_config": true,
+    "successful_clusters": [
+      0
+    ],
+    "skipped_clusters": [],
+    "clusters": {
+      "0": {
+        "status": "ok",
+        "error": null,
+        "optimized_applied": true,
+        "evaluation_skipped": false
+      }
+    },
+    "optimized_eval_skipped": false,
+    "participant_batch_size": 10
+  }
+}
