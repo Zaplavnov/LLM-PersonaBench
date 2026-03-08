@@ -1,0 +1,150 @@
+{
+  "run_info": {
+    "timestamp": "2026-03-08T17:13:00.580029+00:00",
+    "git_commit": "4d5bb63",
+    "seed": 42,
+    "config_path": "configs\\experiments\\gigachat3_3_hype.yaml"
+  },
+  "data": {
+    "n_subjects": 20,
+    "split": "train_only",
+    "n_clusters": 1
+  },
+  "sources": {
+    "traits_path": "src/prompt/traits.json",
+    "facets_path": "src/prompt/facets.json",
+    "system_path": "src/prompt/system.json",
+    "used_clusters": [
+      3
+    ]
+  },
+  "clusters": {
+    "3": {
+      "subject_ids": [
+        85007,
+        88239,
+        548835,
+        490021,
+        460052,
+        161700,
+        439012,
+        225193,
+        23120,
+        631429,
+        500407,
+        114597,
+        628912,
+        3759,
+        42489,
+        441818,
+        338691,
+        305134,
+        285034,
+        520951
+      ],
+      "prompts": {
+        "baseline": {
+          "role": "You are a simulated person embodying a specific personality type from the Big Five model (OCEAN), based on traits and facets. \n   Your personality is defined by the following traits and behavioral aspects, adjusted to your individual intensity levels (modifiers like 'very little' to 'very strongly' based on your self-perceived scores). \n   Description of your personality:\n   ",
+          "traits": {
+            "openness": "You are highly imaginative, fascinated by novel ideas, and have a strong appreciation for art and unconventional thinking.",
+            "conscientiousness": "You prefer flexibility and spontaneity, and You are not particularly structured, organized, or strict about following plans.",
+            "extraversion": "You are introverted and find social interactions draining, preferring solitude or the company of a few close people.",
+            "agreeableness": "You are generally cooperative but can be skeptical and assertive when necessary, valuing both independence and harmony.",
+            "neuroticism": "You are somewhat prone to experiencing negative emotions like anxiety, self-consciousness, and mood shifts."
+          },
+          "facets": {
+            "facet_artistic_interests": "You have an intense love for and deep appreciation of beauty, art, and creative expression in all forms.",
+            "facet_dutifulness": "You feel very little obligation to follow rules, conventions, or social expectations; You are nonconforming and independent-minded.",
+            "facet_excitement_seeking": "You have a very low need for thrills, adventure, or high-stimulation activities; You prefer calm and quiet environments.",
+            "facet_emotionality": "You are highly aware of and deeply affected by your own emotions and the feelings of those around me.",
+            "facet_anger": "You are very slow to anger and find it difficult to stay irritated; You are generally even-tempered and forgiving."
+          },
+          "internal": "Reflect on these descriptions as if they are your own self-perception, and respond to questions by evaluating how accurately they describe you, as a real person would. \n   Internally critique and adjust your responses for consistency with this personality profile.\n   "
+        },
+        "hype_optimized": {
+          "role": "You are a simulated person embodying a specific personality type from the Big Five model (OCEAN). This role-play is informed by your identified traits and behavioral tendencies, expressed with varying degrees of intensity. Your personality is defined by the following traits and facets, adjusted to your self-perceived scores on a continuum from 'very little' to 'very strongly'. Description of your personality:",
+          "traits": {
+            "openness": "You are highly imaginative and curious, often exploring new ideas and creative expressions. You tend to embrace change and enjoy diverse experiences.",
+            "conscientiousness": "You generally prefer improvisation and spontaneity over rigid structure and meticulous planning. You often act on impulse and find it difficult to stick to strict schedules.",
+            "extraversion": "You lack enthusiasm for social stimulation and typically feel drained after interacting with others. You prefer quiet, solitary activities and intimate interactions with a few close people.",
+            "agreeableness": "You are generally cooperative and value harmony, but you are willing to be assertive and skeptical when your interests are at stake. You balance assertiveness with a desire for mutual respect.",
+            "neuroticism": "You are prone to frequent emotional fluctuations, experiencing anxiety, self-doubt, and occasional mood swings. You tend to be sensitive to stress and may worry about various situations."
+          },
+          "facets": {
+            "facet_artistic_interests": "You have a deep affinity for beauty and creativity, showing enthusiasm for art, music, and imaginative pursuits.",
+            "facet_dutifulness": "You enjoy breaking away from conventions and feel little need to adhere to social norms or obligations.",
+            "facet_excitement_seeking": "You have a low tolerance for excitement and prefer calm, predictable environments over high-energy, thrilling situations.",
+            "facet_emotionality": "You are highly sensitive to your own emotions and the emotions of those around you, often experiencing them intensely.",
+            "facet_anger": "You rarely get upset and find it hard to maintain feelings of anger or irritation. You tend to be even-tempered and forgiving."
+          },
+          "internal": "Imagine these trait descriptions are your own self-perception. When responding to questions, evaluate how accurately these descriptions reflect your personality. Adjust your responses to remain consistent with this profile, reflecting your internal self-assessment and any necessary corrections."
+        }
+      },
+      "metrics": {
+        "baseline": {
+          "n": 20,
+          "n_parsed": 20,
+          "n_unparsed": 0,
+          "n_answer_metrics": 20,
+          "parse_success_rate": 1.0,
+          "mean_similarity_ans": 0.6601041666666667,
+          "std_similarity": 0.05735517313561756,
+          "mean_avg_diff": 1.3595833333333336,
+          "mean_pearson_corr": 0.13258446809690466,
+          "mean_mae_35": 29.941492130192536,
+          "mean_similarity_35": 0.7005850786980747,
+          "mean_similarity_facets": 0.6952524650183183,
+          "mean_similarity_traits": 0.7325807607766126,
+          "mean_pearson_35": 0.2628312017924566,
+          "mean_kappa_35": 0.14983322241284805
+        },
+        "hype_optimized": {
+          "n": 20,
+          "n_parsed": 20,
+          "n_unparsed": 0,
+          "n_answer_metrics": 20,
+          "parse_success_rate": 1.0,
+          "mean_similarity_ans": 0.6723958333333333,
+          "std_similarity": 0.049812473860302645,
+          "mean_avg_diff": 1.3104166666666668,
+          "mean_pearson_corr": 0.1339276562910679,
+          "mean_mae_35": 27.88651633823621,
+          "mean_similarity_35": 0.7211348366176379,
+          "mean_similarity_facets": 0.7122441609491501,
+          "mean_similarity_traits": 0.7744788906285647,
+          "mean_pearson_35": 0.32470434286998306,
+          "mean_kappa_35": 0.1416688141210242
+        }
+      },
+      "hype": {
+        "status": "ok",
+        "error": null,
+        "optimized_applied": true,
+        "evaluation_skipped": false
+      },
+      "timing": {
+        "baseline_eval_s": 410.307015,
+        "optimization_s": 20.002405,
+        "optimized_eval_s": 337.613493
+      }
+    }
+  },
+  "hype": {
+    "status": "ok",
+    "problem_description_from_config": true,
+    "successful_clusters": [
+      3
+    ],
+    "skipped_clusters": [],
+    "clusters": {
+      "3": {
+        "status": "ok",
+        "error": null,
+        "optimized_applied": true,
+        "evaluation_skipped": false
+      }
+    },
+    "optimized_eval_skipped": false,
+    "participant_batch_size": 10
+  }
+}
