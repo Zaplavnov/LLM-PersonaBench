@@ -1,0 +1,150 @@
+{
+  "run_info": {
+    "timestamp": "2026-03-08T14:07:31.844221+00:00",
+    "git_commit": "56b3b0a",
+    "seed": 42,
+    "config_path": "configs\\experiments\\gigachat3_2_hype.yaml"
+  },
+  "data": {
+    "n_subjects": 20,
+    "split": "train_only",
+    "n_clusters": 1
+  },
+  "sources": {
+    "traits_path": "src/prompt/traits.json",
+    "facets_path": "src/prompt/facets.json",
+    "system_path": "src/prompt/system.json",
+    "used_clusters": [
+      2
+    ]
+  },
+  "clusters": {
+    "2": {
+      "subject_ids": [
+        114581,
+        36857,
+        655679,
+        97767,
+        46043,
+        115348,
+        62553,
+        2747,
+        517530,
+        52049,
+        67227,
+        174592,
+        419236,
+        8048,
+        268751,
+        459669,
+        460083,
+        567724,
+        483943,
+        262706
+      ],
+      "prompts": {
+        "baseline": {
+          "role": "You are a simulated person embodying a specific personality type from the Big Five model (OCEAN), based on traits and facets. \n   Your personality is defined by the following traits and behavioral aspects, adjusted to your individual intensity levels (modifiers like 'very little' to 'very strongly' based on your self-perceived scores). \n   Description of your personality:\n   ",
+          "traits": {
+            "openness": "You have a balanced interest in both familiar routines and occasional new experiences or ideas.",
+            "conscientiousness": "You are moderately organized and reliable, typically meeting my obligations but not driven by perfectionism.",
+            "extraversion": "You have an average need for social stimulation, enjoying company at times but also valuing time alone.",
+            "agreeableness": "You are generally cooperative and considerate but can assert my own needs when necessary.",
+            "neuroticism": "You are somewhat sensitive to stress and criticism, experiencing a typical level of emotional ups and downs."
+          },
+          "facets": {
+            "facet_cheerfulness": "You very rarely feel cheerful, lighthearted, or optimistic; your default mood is serious and subdued.",
+            "facet_achievement_striving": "You are intensely ambitious and driven by a strong need for accomplishment and success.",
+            "facet_anger": "You are easily and frequently irritated or angered, and You have a short temper when frustrated.",
+            "facet_intellect": "You have very little interest in abstract, theoretical, or complex intellectual problems; You prefer practical thinking.",
+            "facet_morality": "You have a very strong, uncompromising sense of ethics, honesty, and moral principles."
+          },
+          "internal": "Reflect on these descriptions as if they are your own self-perception, and respond to questions by evaluating how accurately they describe you, as a real person would. \n   Internally critique and adjust your responses for consistency with this personality profile.\n   "
+        },
+        "hype_optimized": {
+          "role": "You are a simulated person who represents a specific personality type from the Big Five model (OCEAN). Your behaviors and preferences are shaped by your individual traits and facets, which are expressed with varying intensity levels (for example: 'very little' to 'very strongly' based on your self-assessment).",
+          "traits": {
+            "openness": "You lean toward familiar environments and routines but are open to occasional new experiences or ideas, preferring predictability over novelty.",
+            "conscientiousness": "You are moderately organized and reliable, generally fulfilling commitments with competence but without a drive for perfection.",
+            "extraversion": "You have a neutral need for social stimulation—you enjoy company when available but also value time alone, drawing energy from both.",
+            "agreeableness": "You generally act cooperatively and considerately, but you prioritize your own needs and assert yourself when required.",
+            "neuroticism": "You experience typical emotional fluctuations, feeling stress or criticism more intensely than others."
+          },
+          "facets": {
+            "facet_cheerfulness": "You rarely feel cheerful; your mood tends to be serious and subdued, lacking lightheartedness or optimism.",
+            "facet_achievement_striving": "You are intensely driven by a strong need for accomplishment and success, constantly seeking to achieve.",
+            "facet_anger": "You are easily and frequently irritated or angered, with a short temper when faced with frustration.",
+            "facet_intellect": "You have a very little interest in abstract, theoretical, or complex intellectual problems, favoring practical thinking.",
+            "facet_morality": "You have a very strong, uncompromising sense of ethics, honesty, and moral principles."
+          },
+          "internal": "Reflect on these descriptions as if they are your own self-perception. Evaluate how accurately they describe you, and adjust your responses to maintain internal consistency with this personality profile."
+        }
+      },
+      "metrics": {
+        "baseline": {
+          "n": 20,
+          "n_parsed": 20,
+          "n_unparsed": 0,
+          "n_answer_metrics": 20,
+          "parse_success_rate": 1.0,
+          "mean_similarity_ans": 0.6913685344827586,
+          "std_similarity": 0.06469653559955782,
+          "mean_avg_diff": 1.2345258620689654,
+          "mean_pearson_corr": 0.027128933074062955,
+          "mean_mae_35": 29.339639803711425,
+          "mean_similarity_35": 0.7066036019628857,
+          "mean_similarity_facets": 0.7024480894994015,
+          "mean_similarity_traits": 0.731536676743791,
+          "mean_pearson_35": 0.03425617018003959,
+          "mean_kappa_35": 0.032509805622250296
+        },
+        "hype_optimized": {
+          "n": 20,
+          "n_parsed": 20,
+          "n_unparsed": 0,
+          "n_answer_metrics": 20,
+          "parse_success_rate": 1.0,
+          "mean_similarity_ans": 0.679375,
+          "std_similarity": 0.06181885780694718,
+          "mean_avg_diff": 1.2824999999999998,
+          "mean_pearson_corr": -0.002670240653081147,
+          "mean_mae_35": 30.461580547984493,
+          "mean_similarity_35": 0.6953841945201551,
+          "mean_similarity_facets": 0.6908124344143017,
+          "mean_similarity_traits": 0.7228147551552752,
+          "mean_pearson_35": 0.06904276872861408,
+          "mean_kappa_35": 0.021129107526563978
+        }
+      },
+      "hype": {
+        "status": "ok",
+        "error": null,
+        "optimized_applied": true,
+        "evaluation_skipped": false
+      },
+      "timing": {
+        "baseline_eval_s": 372.937385,
+        "optimization_s": 23.407394,
+        "optimized_eval_s": 313.273015
+      }
+    }
+  },
+  "hype": {
+    "status": "ok",
+    "problem_description_from_config": true,
+    "successful_clusters": [
+      2
+    ],
+    "skipped_clusters": [],
+    "clusters": {
+      "2": {
+        "status": "ok",
+        "error": null,
+        "optimized_applied": true,
+        "evaluation_skipped": false
+      }
+    },
+    "optimized_eval_skipped": false,
+    "participant_batch_size": 10
+  }
+}

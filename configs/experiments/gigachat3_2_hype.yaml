@@ -1,0 +1,31 @@
+name: "gigachat3_2_hype"
+description: "HYPE-оптимизация шаблона промпта для кластеров 2"
+
+prompt:
+  traits_path: "src/prompt/traits.json"
+  facets_path: "src/prompt/facets.json"
+  system_path: "src/prompt/system.json"
+
+data:
+  file_path: "data/raw/df_ipipneo_120_clusters"
+  clusters: [2]
+  num_participants: 20
+
+model:
+  model_name: "ai-sage/GigaChat3-10B-A1.8B"
+  provider: "cloud"
+  temperature: 0.1
+  timeout: 180
+  max_retries: 4
+
+experiment:
+  mode: "hype"
+  seed: 42
+  n_subjects: 20
+
+hype:
+  enabled: true
+  budget: 1
+  participant_batch_size: 10
+  temperature: 0.7
+  problem_description: "Rewrite the persona prompt to improve personality simulation quality for IPIP-NEO role-play.\n\nGoal:\n- Make the persona easier for the model to enact consistently across all questions.\n- Strengthen psychological coherence between ROLE, TRAITS, FACETS, and CRITIC_INTERNAL.\n- Improve trait-to-behavior mapping so each Big Five trait and facet is expressed in clear, observable tendencies.\n\nRequirements:\n- Keep the exact XML schema, tags, ITEM keys, and item counts unchanged.\n- Preserve original semantic direction of each trait/facet (do not invert meaning).\n- Rewrite wording in every section (ROLE, TRAITS, FACETS, CRITIC_INTERNAL); avoid verbatim copying.\n- Use concrete, behavior-oriented phrasing that helps stable response generation.\n- Reduce ambiguity, redundancy, and vague abstractions.\n- Keep intensity cues interpretable (from low to high expression) and internally consistent.\n- Keep neutral tone; do not add safety disclaimers, meta-instructions, or questionnaire answers.\n\nOutput:\n- Return exactly one rewritten <PERSONA_PROMPT>...</PERSONA_PROMPT> block and nothing else."
